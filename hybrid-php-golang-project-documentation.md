@@ -25,21 +25,18 @@ graph TD
         F[Golang 1.21+]
         G[GIN Framework]
         H[Goroutines]
-        I[gRPC]
     end
     
     subgraph "Data & Messaging"
-        J[PostgreSQL 15+]
-        K[Redis 7+]
-        L[Apache Kafka]
-        M[Docker]
+        I[PostgreSQL 15+]
+        J[Redis 7+]
+        K[Apache Kafka]
+        L[Docker]
     end
     
     subgraph "Infrastructure"
-        N[Nginx]
-        O[Docker Compose]
-        P[Prometheus]
-        Q[Grafana]
+        M[Nginx]
+        N[Docker Compose]
     end
     
     A --> B
@@ -49,20 +46,18 @@ graph TD
     
     F --> G
     G --> H
-    G --> I
-    
-    B --> L
-    G --> L
-    
-    B --> J
-    G --> J
     
     B --> K
     G --> K
     
-    O --> M
-    N --> B
-    P --> Q
+    B --> I
+    G --> I
+    
+    B --> J
+    G --> J
+    
+    N --> L
+    M --> B
 ```
 
 ---
