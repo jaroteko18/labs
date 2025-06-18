@@ -74,50 +74,46 @@ graph TB
     end
     
     subgraph "PHP Monorepo - Repository 1"
-        C --> D[Master Data Service<br/>Port: 8001]
-        C --> E[User Management<br/>Port: 8002]
-        C --> F[Authentication<br/>Port: 8003]
-        C --> G[API Gateway<br/>Port: 8000]
+        C --> D[Laravel Application<br/>Port: 8000<br/>- Master Data Management<br/>- User Management<br/>- Authentication<br/>- API Gateway]
     end
     
     subgraph "Message Bus"
-        H[Apache Kafka<br/>Topics & Queues]
+        E[Apache Kafka<br/>Topics & Queues]
     end
     
     subgraph "Golang Services - Repository 2"
-        I[Billing Service<br/>GIN - Port: 9001]
-        J[Transaction Processing<br/>GIN - Port: 9002]
-        K[Payment Processing<br/>GIN - Port: 9003]
-        L[Heavy Data Processor<br/>GIN - Port: 9004]
+        F[Billing Service<br/>GIN - Port: 9001]
+        G[Transaction Processing<br/>GIN - Port: 9002]
+        H[Payment Processing<br/>GIN - Port: 9003]
+        I[Heavy Data Processor<br/>GIN - Port: 9004]
     end
     
     subgraph "Data Layer"
-        M[PostgreSQL<br/>Primary Database<br/>+ Indexing]
-        N[Redis<br/>Cache & Temp Storage]
+        J[PostgreSQL<br/>Primary Database<br/>+ Indexing]
+        K[Redis<br/>Cache & Temp Storage]
     end
     
-    G -->|Async Messages| H
-    H --> I
+    D -->|Async Messages| E
+    E --> F
+    E --> G
+    E --> H
+    E --> I
+    
+    D -->|Direct API Calls| G
+    D -->|Direct API Calls| H
+    
+    D --> J
+    D --> K
+    
+    F --> J
+    G --> J
     H --> J
+    I --> J
+    
+    F --> K
+    G --> K
     H --> K
-    H --> L
-    
-    G -->|Direct API Calls| J
-    G -->|Direct API Calls| K
-    
-    D --> M
-    E --> M
-    F --> N
-    
-    I --> M
-    J --> M
-    K --> M
-    L --> M
-    
-    I --> N
-    J --> N
-    K --> N
-    L --> N
+    I --> K
 ```
 
 ### Communication Flow Diagram
