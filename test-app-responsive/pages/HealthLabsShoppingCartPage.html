@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Labs Shopping Cart</title>
+    <link href="../css/main.css" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fjarotsap5663back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-gray-50 font-sf-pro">
+    <div class="min-h-screen bg-white">
+        <div class="bg-gray-50 min-h-screen">
+            <!-- Header -->
+            <div class="flex items-center justify-between px-40 py-8">
+                <h1 class="text-2xl font-semibold text-gray-800">Your cart</h1>
+                <div class="flex items-center gap-4">
+                    <div class="bg-white border border-gray-400 rounded-lg px-4 py-2">
+                        <span class="text-gray-600 font-medium">Same day labs, next day results</span>
+                    </div>
+                    <button class="text-gray-800 font-medium border-b border-gray-400 pb-1" onclick="handleContinueShopping(this)">
+                        Continue shopping
+                    </button>
+                    <button class="bg-yellow-300 text-gray-800 font-medium px-6 py-2 rounded-full border border-gray-700" onclick="handleCheckout(this)">
+                        Checkout
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="flex gap-8 px-40">
+                <!-- Reviews Section -->
+                <div class="w-68 bg-gray-50 rounded-2xl p-4">
+                    <!-- Rating Header -->
+                    <div class="flex items-center gap-4 mb-8">
+                        <img src="../assets/images/img_frame.svg" alt="Google" class="w-6 h-6" />
+                        <span class="text-lg font-semibold text-gray-800">5.0</span>
+                        <div class="flex gap-1">
+                            <img src="../assets/images/img_icons_ui_star.svg" alt="Star" class="w-4 h-4" />
+                            <img src="../assets/images/img_icons_ui_star.svg" alt="Star" class="w-4 h-4" />
+                            <img src="../assets/images/img_icons_ui_star.svg" alt="Star" class="w-4 h-4" />
+                            <img src="../assets/images/img_icons_ui_star.svg" alt="Star" class="w-4 h-4" />
+                            <img src="../assets/images/img_icons_ui_star.svg" alt="Star" class="w-4 h-4" />
+                        </div>
+                        <span class="text-sm text-gray-600">638 reviews</span>
+                    </div>
+
+                    <!-- Review 1 -->
+                    <div class="mb-8">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-semibold text-gray-800">Tristan K.</h3>
+                            <span class="text-xs text-gray-600">a day ago</span>
+                        </div>
+                        <p class="text-sm text-gray-800 leading-5">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non massa lacus. Curabitur lacus dui, condimentum eu massa ut, tempus fermentum nulla.
+                        </p>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="mb-8">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-semibold text-gray-800">Jourdan B.</h3>
+                            <span class="text-xs text-gray-600">2 weeks ago</span>
+                        </div>
+                        <p class="text-sm text-gray-800 leading-5">
+                            Suspendisse vestibulum risus dignissim, laoreet nisi gravida, varius libero. Quisque in lectus id arcu accumsan eleifend eu in ante. Mauris vel enim ultrices, venenatis dui eget, maximus massa. Fusce suscipit pretium auctor. Nunc semper porttitor risus. Phasellus in volutpat diam. Integer vel nunc orci.
+                        </p>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="mb-8">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-semibold text-gray-800">Jack L.</h3>
+                            <span class="text-xs text-gray-600">a month ago</span>
+                        </div>
+                        <p class="text-sm text-gray-800 leading-5">
+                            Donec gravida erat eros, et egestas lorem malesuada ut. Duis non tellus tempus, tincidunt eros vitae, tincidunt sapien. Sed viverra lacus id diam mollis, non convallis mi sodales.
+                        </p>
+                    </div>
+
+                    <!-- Read Reviews Button -->
+                    <button class="text-gray-800 font-medium border-b border-gray-400 pb-1" onclick="handleReadReviews(this)">
+                        Read reviews
+                    </button>
+                </div>
+
+                <!-- Cart Items Section -->
+                <div class="flex-1">
+                    <!-- Cart Item 1: Men's Hormone Test -->
+                    <div class="bg-white border border-gray-400 rounded-2xl p-4 mb-4 shadow-sm">
+                        <!-- Item Header -->
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-lg font-semibold text-gray-800">Men's Hormone Medium Test</h2>
+                            <div class="flex items-center gap-2">
+                                <button class="text-red-500 font-medium" onclick="handleRemoveItem(this)">
+                                    Remove
+                                </button>
+                                <img src="../assets/images/img_group.svg" alt="Remove" class="w-6 h-6" />
+                            </div>
+                        </div>
+
+                        <!-- Subscription Option -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 bg-gray-800 rounded-lg flex items-center justify-center">
+                                    <div class="w-2 h-2 bg-green-400 rounded"></div>
+                                </div>
+                                <span class="text-gray-800 font-medium">🔥 Subscribe & lock in</span>
+                                <div class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm font-medium">
+                                    xx%
+                                </div>
+                                <span class="text-gray-800 font-medium">off</span>
+                                <img src="../assets/images/img_icons_ui_16_info.svg" alt="Info" class="w-4 h-4" />
+                            </div>
+                            <div class="text-green-600 font-medium">
+                                <span class="text-xs">$</span><span class="text-lg">152.45</span>
+                            </div>
+                        </div>
+
+                        <!-- Test Frequency Selection -->
+                        <div class="bg-white flex items-center gap-4 p-2 mb-4">
+                            <img src="../assets/images/img_icons_ui_16_cornerdownright.svg" alt="Arrow" class="w-4 h-4" />
+                            <span class="text-gray-600">Test every</span>
+                            <div class="bg-gray-50 rounded-lg flex">
+                                <button class="px-3 py-2 text-sm text-gray-600 border-r border-gray-300" onclick="handleFrequencySelect(this, '1')">
+                                    1
+                                </button>
+                                <button class="px-3 py-2 text-sm text-gray-600" onclick="handleFrequencySelect(this, '3')">
+                                    3
+                                </button>
+                                <button class="px-3 py-2 text-sm text-gray-800 font-semibold bg-green-400 rounded" onclick="handleFrequencySelect(this, '6')">
+                                    6
+                                </button>
+                                <button class="px-3 py-2 text-sm text-gray-600" onclick="handleFrequencySelect(this, '12')">
+                                    12
+                                </button>
+                            </div>
+                            <span class="text-gray-600">months</span>
+                        </div>
+
+                        <!-- One-time Option -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 bg-gray-200 border border-gray-400 rounded-lg"></div>
+                                <span class="text-gray-600">One-time</span>
+                            </div>
+                            <div class="text-gray-600">
+                                <span class="text-xs">$</span><span class="text-lg">190.56</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 2: DHT Test -->
+                    <div class="bg-white border border-gray-400 rounded-2xl p-4 mb-6 shadow-sm">
+                        <!-- Item Header -->
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-lg font-semibold text-gray-800">Dihydrotestosterone, DHT</h2>
+                            <div class="flex items-center gap-2">
+                                <button class="text-red-500 font-medium" onclick="handleRemoveItem(this)">
+                                    Remove
+                                </button>
+                                <img src="../assets/images/img_group.svg" alt="Remove" class="w-6 h-6" />
+                            </div>
+                        </div>
+
+                        <!-- Subscription Option -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 bg-gray-200 border border-gray-400 rounded-lg"></div>
+                                <span class="text-gray-800 font-medium">🔥 Subscribe & lock in</span>
+                                <div class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm font-medium">
+                                    xx%
+                                </div>
+                                <span class="text-gray-800 font-medium">off</span>
+                                <img src="../assets/images/img_icons_ui_16_info.svg" alt="Info" class="w-4 h-4" />
+                            </div>
+                            <div class="text-green-600 font-medium">
+                                <span class="text-xs">$</span><span class="text-lg">105.83</span>
+                            </div>
+                        </div>
+
+                        <!-- One-time Option (Selected) -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 bg-gray-800 rounded-lg flex items-center justify-center">
+                                    <div class="w-2 h-2 bg-green-400 rounded"></div>
+                                </div>
+                                <span class="text-gray-600">One-time</span>
+                            </div>
+                            <div class="text-gray-600">
+                                <span class="text-xs">$</span><span class="text-lg">132.29</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coupon Info -->
+                    <p class="text-gray-600 mb-4 text-center">
+                        You can add coupons & gift certificates at checkout
+                    </p>
+
+                    <!-- Divider -->
+                    <hr class="border-gray-300 mb-3" />
+
+                    <!-- Subscription Discount -->
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-green-700">Subscription discount</span>
+                        <div class="text-green-700">
+                            <span class="text-sm">-</span>
+                            <span class="text-xs">$</span>
+                            <span class="text-lg">38.11</span>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <hr class="border-gray-300 mb-3" />
+
+                    <!-- Total -->
+                    <div class="flex justify-between items-center mb-8">
+                        <span class="text-lg font-semibold text-gray-800">Total</span>
+                        <div class="flex items-center gap-2">
+                            <div class="text-gray-600">
+                                <span class="text-xs">$</span>
+                                <span class="relative">
+                                    <span class="text-lg">322.85</span>
+                                    <img src="../assets/images/img_rectangle_66.svg" alt="Strikethrough" class="absolute top-1 left-0 w-full h-4" />
+                                </span>
+                            </div>
+                            <div class="text-gray-800 font-semibold">
+                                <span class="text-xs">$</span>
+                                <span class="text-lg">284.74</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Actions -->
+                    <div class="flex justify-between items-center">
+                        <button class="text-gray-800 font-medium border-b border-gray-400 pb-1" onclick="handleContinueShopping(this)">
+                            Continue shopping
+                        </button>
+                        <button class="bg-yellow-300 text-gray-800 font-medium px-6 py-2 rounded-full border border-gray-700" onclick="handleCheckout(this)">
+                            Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleContinueShopping(element) {
+            console.log('Continue shopping clicked');
+            // Add navigation logic here
+        }
+
+        function handleCheckout(element) {
+            console.log('Checkout clicked');
+            // Add checkout logic here
+        }
+
+        function handleRemoveItem(element) {
+            console.log('Remove item clicked');
+            const cartItem = element.closest('.bg-white');
+            if (cartItem) {
+                cartItem.remove();
+            }
+        }
+
+        function handleFrequencySelect(element, frequency) {
+            console.log('Frequency selected:', frequency);
+            // Remove active state from all buttons in the same group
+            const group = element.parentElement;
+            const buttons = group.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-green-400', 'text-gray-800', 'font-semibold');
+                btn.classList.add('text-gray-600');
+            });
+            // Add active state to clicked button
+            element.classList.add('bg-green-400', 'text-gray-800', 'font-semibold');
+            element.classList.remove('text-gray-600');
+        }
+
+        function handleReadReviews(element) {
+            console.log('Read reviews clicked');
+            // Add reviews modal or navigation logic here
+        }
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
