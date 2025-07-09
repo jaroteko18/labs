@@ -143,15 +143,6 @@ graph TD
    - Basic profile info
    - Simple editing
 
-#### Removed Complex Features
-- ~~Real-time notifications~~
-- ~~Advanced search~~
-- ~~File download with preview~~
-- ~~Consultation status tracking~~
-- ~~Rating and review system~~
-- ~~Advanced calendar features~~
-- ~~Complex availability management~~
-
 ---
 
 ## 📅 Realistic 1-Month Timeline
@@ -368,4 +359,4 @@ graph TD
 
 ---
 
-*This milestone represents a realistic 1-month development plan for a single full-stack developer, focusing on core MVP features that provide immediate value while building a solid foundation for future enhancements.*
+*This milestone represents a realistic 1-month development plan for 1-2 full-stack developer, focusing on core MVP features that provide immediate value while building a solid foundation for future enhancements.*
